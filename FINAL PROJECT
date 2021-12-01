@@ -1,0 +1,17 @@
+#NicholasVioral
+#Password Generator
+
+#!/bin/bash
+
+#Giving the script a title to let the user know what they are using
+echo "Password Generator"
+#Prompting the user to enter desired password length
+echo "Please enter the length of the password: "
+#Reading the length of password the user wants
+read PASS_LENGTH
+
+#For loop to print out 5 different randomly generated passwords
+for i in $(seq 1 5);
+do
+	openssl rand -base64 48 | cut -c1-$PASS_LENGTH
+done
